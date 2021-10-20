@@ -1,0 +1,85 @@
+.promo
+    height: 100vh
+    background: linear-gradient(180deg, #fff 0%, $main-color-light 100%)
+    position: relative
+    overflow: hidden
+    &__titles
+        position: absolute
+        bottom: 250px
+        width: 460px
+    &__title
+        margin-top: 50px
+        position: absolute
+        will-change: position
+        @include after_line
+    &__subtitle
+        position: relative
+        padding-left: 15px
+        z-index: 0
+        @include before_circle
+        &:after
+            content: "I AM FRONTEND DEVELOPER"
+            position: absolute
+            top: -20px
+            left: 15px
+            color: #fff
+    &__photo
+        position: absolute
+        top: 0
+        height: 100%
+        left: 50%
+        filter: drop-shadow(13px 13px 18px rgba(0, 0, 0, 0.25)) grayscale(100%) brightness(125%)
+    &__circle
+        position: absolute
+        will-change: transform
+        &_first
+            width: 35vh
+            height: 37vh
+            border: 2px solid $main-color
+            transform: rotate(-26.05deg)
+            border-radius: 100%
+            bottom: 5%
+            left: calc( 50% + 25vh )
+            animation: circle1 15s infinite alternate
+        &_second
+            width: 20vh
+            height: 22vh
+            border: 2px solid #fff
+            transform: rotate(30deg)
+            border-radius: 100%
+            bottom: 35%
+            left: calc( 50%)
+            animation: circle2 20s 2s infinite alternate
+        &_third
+            width: 17vh
+            height: 30vh
+            border: 2px solid #fff
+            transform: rotate(35deg)
+            border-radius: 100%
+            top: 15%
+            left: calc( 50% + 35vh)
+            animation: circle3 30s infinite alternate
+
+@keyframes circle1
+    50%
+        border-color: #fff
+        transform: translate(10%, -10%) scale(1.1)
+    100%
+        border-color: $main-color
+        transform: translate(-10%, 5%)
+
+@keyframes circle2
+    50%
+        border-color: $main-color
+        transform: translate(10%, -10%) scaleY(.9)
+    100%
+        border-color: #fff
+        transform: translate(-5%, 5%) scale(1.1)
+
+@keyframes circle3
+    50%
+        border-color: $main-color
+        transform: translate(70%, -50%) scaleY(0.7)
+    100%
+        border-color: #fff
+        transform: translate(10%, 10%) scale(1.1, .6)
