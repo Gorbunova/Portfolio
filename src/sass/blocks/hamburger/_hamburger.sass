@@ -2,32 +2,35 @@
     position: fixed
     top: 20px
     right: 20px
-    height: 45px
-    width: 45px
-    border: 1.5px solid #CDC8BF
-    border-radius: 100%
-    display: flex
-    flex-direction: column
-    justify-content: center
-    align-items: center
-    cursor: pointer
     z-index: 2
-    transition: transform 1s
-    & *
-        transition: 1s all
-    &_close
-        .hamburger__label
-            opacity: 0
-        .hamburger__wrapper
-            span
-                &:nth-child(1)
-                    transform: rotate(45deg) translate(6px, 6px)
-                &:nth-child(2)
-                    opacity: 0
-                &:nth-child(3)
-                    transform: rotate(-45deg) translate(6px, -6px)
-
+    cursor: pointer
+    display: flex
+    align-items: center
     &__wrapper
+        height: 45px
+        width: 45px
+        border: 1.5px solid #CDC8BF
+        border-radius: 100%
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        transition: transform 1s
+        & *
+            transition: 1s all
+        &_close
+            .hamburger__label
+                opacity: 0
+            .hamburger__lines
+                span
+                    &:nth-child(1)
+                        transform: rotate(45deg) translate(6px, 6px)
+                    &:nth-child(2)
+                        opacity: 0
+                    &:nth-child(3)
+                        transform: rotate(-45deg) translate(6px, -6px)
+
+    &__lines
         height: 18px
         display: flex
         flex-direction: column
@@ -39,8 +42,6 @@
             height: 1px
             background: #151812
     &__label
-        position: absolute
-        left: -80px
         font-weight: 300
         font-size: 18px
         letter-spacing: 5px

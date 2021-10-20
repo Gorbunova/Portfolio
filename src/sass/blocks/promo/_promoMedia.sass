@@ -1,0 +1,70 @@
+@media (max-width: 992px)
+    .promo
+        &__title
+            width: 320px
+            line-height: 50px
+
+@media (max-width: 768px)
+    .promo
+        &__photo
+            position: static
+            height: 70vh
+            margin-left: 50%
+            transform: translateX(-50%)
+            img
+                width: 100%
+                height: 100%
+        &__titles
+            bottom: 22%
+        &__title
+            position: absolute
+            top: 0
+            width: 100%
+        &__circle
+            animation: none
+            &_first
+                width: 25vh
+                height: 27vh
+                bottom: 35%
+                left: 50%
+            &_second
+                width: 17vh
+                height: 19vh
+                bottom: 50%
+                left: 20%
+            &_third
+                width: 10vh
+                height: 17vh
+                top: 15%
+                left: 50%
+
+@media (max-width: 576px)
+    .promo
+        &__photo
+            height: 65vh
+        &__titles
+            bottom: 25%
+        &__subtitle
+            font-size: 18px
+        &__title
+            margin-top: 35px
+            width: 320px
+            font-size: 30px
+            &:after
+                margin-top: 0
+        &__circle
+            &_first
+                width: 20vh
+                height: 22vh
+                bottom: 40%
+                left: 50%
+            &_second
+                width: 15vh
+                height: 15vh
+                bottom: 55%
+                left: 10%
+            &_third
+                width: 9vh
+                height: 16vh
+                top: 12%
+                left: 50%
