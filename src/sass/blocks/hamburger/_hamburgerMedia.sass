@@ -1,12 +1,11 @@
-@media (max-width: 1000px)
+@media (max-width: 1286px)
     .hamburger
-        background-color: #ffffffc9
-        width: 150px
-        padding-left: 15px
+        &__label
+            display: none
         &__wrapper
-            border-color: black
+            background-color: #fff
 
-@media (max-width: 576px)
+@media (max-width: 1000px)
     .hamburger
         background-color: unset
         width: 50px
@@ -14,9 +13,6 @@
         top: 10px
         right: 10px
         &__wrapper
-            background-color: #fff
             height: 50px
             width: 50px
             border-color: $main-color_light
-        &__label
-            display: none
