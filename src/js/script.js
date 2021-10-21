@@ -21,6 +21,6 @@ function openMenu() {
 	} else {
 		content.classList.toggle('content_folded');
 		sidePanel.classList.toggle('sidepanel_hidden');
-		hamburger.classList.toggle('active');
+		hamburger.classList.toggle('hamburger_close');
 	}
 }
