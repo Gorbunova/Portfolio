@@ -21,9 +21,9 @@ export function isPartiallyVisible(item) {
 
 export function setAnimation(condition, item, isrepeat) {
 	if (condition) {
-		item.classList.add('active');
+		item.classList.remove('hidden');
 	} else if (isrepeat) {
-		item.classList.remove('active');
+		item.classList.add('hidden');
 	}
 }
 
@@ -31,7 +31,7 @@ export function setSteppedAnimation(condition, index, arrayItems, isrepeat) {
 	if (condition) {
 		if (index + 1 <= arrayItems.length) {
 			setTimeout(function () {
-				arrayItems[index].classList.add('active');
+				arrayItems[index].classList.remove('hidden');
 				setSteppedAnimation(condition, index + 1, arrayItems);
 			}, 500);
 		}

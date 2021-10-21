@@ -1,0 +1,85 @@
+@media (max-width: 1050px)
+    .about
+        &__subtitle
+            font-size: 40px
+            &_active
+                &::after
+                    width: calc( 100% - 380px - 40px)
+
+@media (max-width: 992px)
+    .about
+        &__subtitle
+            font-size: 32px
+            padding-left: 15px
+            &_active
+                &::after
+                    width: calc( 100% - 318px - 40px)
+        &__photo
+            width: 300px
+        &__text
+            padding-top: 150px
+            font-size: 16px
+        &__paragraph
+            margin: 8px 0
+            line-height: 20px
+        &__list
+            &-item
+                line-height: 20px
+
+@media (max-width: 768px)
+    .about
+        /** background: linear-gradient(180deg, #EBE8E1 0%, rgba(247, 245, 244, 0) 100%) **/
+        &__titles
+            grid-template: 1fr/ 1fr
+        &__subtitle
+            margin-top: 10px
+            &::after
+                top: 60px
+                left: 0
+            &::before
+                right: 20px
+                top: 50px
+            &_active
+                &::after
+                    width: calc( 100% - 40px )
+        &__title
+            font-size: 20px
+            margin-top: -75px
+            padding-right: 8%
+            z-index: -1
+            &::after
+                height: 110px
+                background-color: #fff
+                top: -35px
+                left: 0
+                width: 100%
+        &__foreground
+            padding-top: 50px
+        &__photo
+            display: none
+        &__text-wrapper
+            padding-bottom: 50px
+            margin-top: calc( -100vh + 130px )
+            background-color: unset
+            margin-left: 0
+            grid-template: repeat(2, auto) / 1fr
+            z-index: -1
+        &__text
+            padding: 0
+            &-photo
+                display: block
+                width: 300px
+                margin: 0 auto
+        &__paragraph
+            margin: 10px 0
+
+@media (max-width: 576px)
+    .about
+        &__text
+            width: 90%
+            font-size: 15px
+        &__subtitle
+            font-size: 24px
+        &__title
+            padding-right: 15%
+            font-size: 18px
