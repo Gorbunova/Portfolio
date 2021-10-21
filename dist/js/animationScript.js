@@ -27,6 +27,34 @@ export function animate() {
 	function scroll(e) {
 		leaveHomeScreen();
 		headerWrapping();
+
+		//Education Section animation
+		const line = doc.querySelector('.education__line'),
+			columnTitles = doc.querySelectorAll('.education__column-title'),
+			column = doc.querySelectorAll('.education__column'),
+			item = doc.querySelectorAll('.education__item');
+
+		setAnimation(isFullyVisible(line), line, false);
+
+		setTimeout(() => {
+			setSteppedAnimation(
+				isFullyVisible(columnTitles[0]),
+				0,
+				columnTitles,
+				false
+			);
+
+			setTimeout(() => {
+				column.forEach((col) => {
+					setAnimation(isFullyVisible(column[0]), col, false);
+				});
+				setTimeout(() => {
+					item.forEach((item) => {
+						setAnimation(isFullyVisible(column[0]), item, false);
+					});
+				}, 1000);
+			}, 2000);
+		}, 1000);
 	}
 
 	function leaveHomeScreen() {
