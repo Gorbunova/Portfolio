@@ -1,0 +1,58 @@
+.hamburger
+    position: fixed
+    top: 20px
+    right: 20px
+    z-index: 2
+    cursor: pointer
+    display: flex
+    align-items: center
+    height: 60px
+    &__wrapper
+        height: 50px
+        width: 50px
+        border: 1.5px solid #CDC8BF
+        border-radius: 100%
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        transition: transform 1s
+        & *
+            transition: 1s all
+    &_close
+        .hamburger__label
+            opacity: 0
+        .hamburger__lines
+            span
+                &:nth-child(1)
+                    transform: rotate(45deg) translate(6px, 6px)
+                &:nth-child(2)
+                    opacity: 0
+                &:nth-child(3)
+                    transform: rotate(-45deg) translate(6px, -6px)
+
+    &__lines
+        height: 18px
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        align-items: flex-end
+        span
+            display: block
+            width: 25px
+            height: 1px
+            background: #151812
+    &__label
+        font-weight: 300
+        font-size: 18px
+        letter-spacing: 5px
+    &_up
+        transform: rotate(-90deg)
+        .hamburger__menu
+            opacity: 0
+        .hamburger__wrapper
+            span
+                &:nth-child(1)
+                    transform: rotate(45deg) translate(8px,-3px) scaleX(.5)
+                &:nth-child(3)
+                    transform: rotate(-45deg) translate(9px,2px) scaleX(.5)
