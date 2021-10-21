@@ -11,6 +11,8 @@ export function animate() {
 	const doc = document;
 
 	var isScrolling = false;
+	const skillsVisible = doc.querySelector('.skills__container');
+	const skillsOffset = getTopCoords(skillsVisible);
 
 	window.addEventListener('scroll', throttleScroll, false);
 
@@ -55,6 +57,15 @@ export function animate() {
 				}, 1000);
 			}, 2000);
 		}, 1000);
+
+		const skillsVisible = doc.querySelector('.skills__container'),
+			skillsWrapper = doc.querySelector('.skills__wrapper'),
+			skillsParts = doc.querySelectorAll('.skills__title');
+
+		skillsWrapper.style.transform = `translateX(-${
+			getTopCoords(skillsVisible) - skillsOffset
+		}px)`;
+		console.log(skillsOffset);
 	}
 
 	function leaveHomeScreen() {
@@ -91,6 +102,6 @@ export function animate() {
 	function getTopCoords(elem) {
 		let box = elem.getBoundingClientRect();
 
-		return box.top + pageYOffset;
+		return box.top + window.scrollY;
 	}
 }
