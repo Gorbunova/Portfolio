@@ -1,0 +1,84 @@
+@media (max-width: 1200px)
+    .education
+        padding: 80px 0 50px 0
+        &__wrapper
+            padding-left: 80px
+            column-gap: 20px
+        &__column
+            &-title
+                font-size: 18px
+                margin-bottom: 10px
+            ul li
+                &::after
+                    top: -33px
+                    height: calc(100% + 56px)
+        &__body
+            padding-left: 30px
+        &__head
+            padding: 35px 0 0 100px
+
+@media (max-width: 992px)
+    .education
+        &__wrapper
+            grid-template: repeat(2, 1fr) / 470px
+            padding-left: 200px
+        &__column
+            margin-bottom: 30px
+            &-title
+                border-top: 1px solid #000
+            &:first-child
+                .education__column-title
+                    border-top: none
+            ul li
+                &::after
+                    top: -33px
+                    height: calc(100% + 86px)
+
+@media (max-width: 768px)
+    .education
+        &__wrapper
+            grid-template: repeat(2, 1fr) / minmax(400px, 480px)
+            padding-left: 80px
+        &__head
+            padding: 20px 0 0 100px
+        &__icon
+            top: 30px
+        &__item
+            &::before
+                top: 48px
+
+@media (max-width: 576px)
+    .education
+        padding: 50px 0 10px 0
+        &__wrapper
+            grid-template: repeat(2, 1fr) / minmax(auto, 380px)
+            padding-left: 0px
+        &__column
+            margin-bottom: 30px
+            &-title
+                font-size: 16px
+            &:first-child
+                .education__column-title
+                    border-top: none
+            ul li
+                &::after
+                    top: -33px
+                    height: calc(100% + 86px)
+        &__head
+            padding: 20px 0 0 80px
+
+        &__location
+            font-size: 14px
+            margin-top: 0
+        &__icon
+            top: 30px
+            left: 25px
+            &::before
+                transform: translateY(15px) scale(.7)
+        &__item
+            &::before
+                top: 48px
+        &__body
+            padding-left: 20px
+            font-size: 12px
+            line-height: 18px
