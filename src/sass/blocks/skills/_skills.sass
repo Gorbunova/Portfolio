@@ -159,8 +159,16 @@
             font-size: 18px
             position: relative
             font-weight: 300
+            opacity: 1
+            transition: 1s all
+            transform: translateX(0)
             span
                 font-weight: 500
+            &.hidden
+                opacity: 0
+                transform: translateX(30%)
+                &::before
+                    width: 0
             &::before
                 position: absolute
                 content: ""
@@ -169,6 +177,7 @@
                 background-color: #bebcb7
                 top: 50%
                 left: -50px
+                transition: width 3s
             &::after
                 top: 50%
                 transform: translateY(-50%)

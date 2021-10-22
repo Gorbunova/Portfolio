@@ -12,13 +12,13 @@
         background-color: #EBE8E1
     &__line
         height: 100%
-        width: 100%
+        width: 0
         background-color: #000
-        &-80
-            width: 80%
-        &-90
-            width: 90%
-        &-75
-            width: 75%
     &__num
         margin-left: 20px
+
+@media (max-width: 992px)
+    .progress
+        &_row
+            margin-top: 0
+            padding-left: 80px

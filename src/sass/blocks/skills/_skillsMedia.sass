@@ -1,0 +1,162 @@
+@media (max-width: 1200px)
+    .skills
+        &__chapters
+            top: 80px
+            width: 90%
+            left: 50%
+            transform: translateX(-50%)
+        &__title
+            h3
+                font-size: 16px
+        &__item
+            padding-top: 250px
+        &__tec
+            &-list
+                &-item
+                    font-size: 18px
+                    margin-bottom: 15px
+        &__technologies
+            padding: 30px
+        &__instruments
+            padding: 30px
+            &-item
+                grid-template-columns: 55% 45%
+
+@media (max-width: 1081px)
+    .skills
+        &__knowledge
+            &::before
+                height: calc( 100% - 97px )
+
+@media (max-width: 992px)
+    .skills
+        &__title
+            width: 150px
+            &::after
+                content: ""
+                width: 1px
+                height: calc( 100% - 30px )
+                position: absolute
+                top: -30px
+                left: -13px
+                background-color: #000
+                transition: height 1s
+        &__technologies
+            padding: 10px
+        &__tec-list
+            padding: 0 10px
+            &-item
+                font-size: 16px
+        &__instruments
+            padding: 20px
+            &-item
+                grid-template: 50px 20px / 1fr
+                margin-bottom: 20px
+        &__instr-title
+            font-size: 16px
+        &__knowledge
+            padding: 50px 70px 30px 100px
+            &-item
+                font-size: 16px
+            &::before
+                height: calc( 100% - 93px )
+
+@media (max-width: 768px)
+    .skills
+        padding: 50px 0 100px 0
+        height: auto
+        &__container
+            position: static
+        &__title-wrapper
+            display: none
+        &__chapters
+            top: 50px
+        &__item
+            padding-top: 100px
+            height: auto
+            position: relative
+            @include before_skills_title
+            @include after_skills_circle
+            &:nth-child(1)
+                &::before
+                    content: "Технологии веб-разработки"
+            &:nth-child(2)
+                &::before
+                    content: "Инструменты разработки"
+            &:nth-child(3)
+                &::before
+                    content: "Практические знания"
+
+        &__wrapper
+            grid-template: auto auto auto / 1fr
+            margin: 0 auto
+            transform: none
+
+        &__technologies
+            padding: 30px
+            width: 100%
+            grid-template: repeat(3, auto ) / 1fr
+            position: relative
+        &__tec-list
+            min-height: unset
+            margin: 0 auto
+            width: 350px
+            &::after
+                display: none
+
+        &__instruments
+            padding: 30px 20px 10px 20px
+            width: 100%
+            position: relative
+
+        &__knowledge
+            width: 100%
+            margin-bottom: 30px
+
+@media (max-width: 576px)
+    .skills
+        &__chapters
+            top: 10px
+
+        &__technologies
+            padding: 10px
+            width: 100%
+            grid-template: repeat(3, auto ) / 100%
+            position: relative
+        &__tec
+            &-title
+                margin-bottom: 5px
+            &-list
+                width: auto
+                &-item
+                    font-size: 15px
+                    margin-bottom: 5px
+
+        &__instruments
+            padding: 10px
+            &-item
+                grid-template: 50px 10px / 1fr
+                margin-bottom: 10px
+        &__instr-title
+            font-size: 15px
+        &__icon-wrapper
+            margin-right: 10px
+            width: 40px
+            height: 40px
+            display: grid
+            grid-template-columns: 50px auto
+            align-items: center
+            justify-items: center
+        &__icon
+            width: 20px
+            height: 20px
+
+        &__knowledge
+            padding: 40px 10px 10px 70px
+            &-item
+                font-size: 15px
+            &::before
+                left: 20px
+                height: calc( 100% - 82px )
+            &::after
+                left: 12px
