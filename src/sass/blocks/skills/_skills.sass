@@ -1,0 +1,190 @@
+.skills
+    height: calc( 200vw + 100vh )
+    position: relative
+    &__chapters
+        position: absolute
+        top: 100px
+        width: 1140px
+        left: 50%
+        transform: translateX(-50%)
+    &__line
+        height: 1px
+        width: 100%
+        background-color: #000
+    &__title-wrapper
+        padding-left: 100px
+        display: flex
+        justify-content: space-between
+    &__title
+        margin-top: 30px
+        text-transform: uppercase
+        position: relative
+        &::before
+            content: ""
+            position: absolute
+            width: 15px
+            height: 15px
+            border: 1px solid $main-color
+            border-radius: 100%
+            left: -20px
+            top: 0
+            transform: translateY(50%)
+            transition: background-color 1s
+        &_active
+            color: $main-color
+            &::before
+                background-color: $main-color
+        &::after
+            content: ""
+            width: 1px
+            height: 100%
+            position: absolute
+            top: -30px
+            left: -13px
+            background-color: #000
+            transition: height 1s
+
+    &__container
+        position: sticky
+        top: 0
+        overflow: hidden
+    &__wrapper
+        display: grid
+        grid-template-columns: repeat(3, 100vw )
+    &__item
+        padding-top: 300px
+        display: flex
+        justify-content: center
+        height: 100vh
+        width: 100vw
+
+    &__technologies
+        margin: 0 auto
+        box-shadow: 11px 11px 19px 5px rgba(34, 60, 80, 0.2)
+        padding: 50px 50px
+        width: 90%
+        list-style-type: none
+        display: grid
+        grid-template-columns: repeat(3, 1fr )
+    &__tec
+        &-title
+            font-family: Gruppo
+            font-size: 30px
+            font-weight: 300
+            letter-spacing: 2px
+            color: $main-color
+            margin-bottom: 20px
+            text-align: center
+        &-item
+            font-weight: 300
+            font-size: 18px
+            margin-bottom: 15px
+            &:nth-child(3)
+                ul
+                    &::after
+                        display: none
+        &-list
+            list-style-type: none
+            position: relative
+            padding: 0 30px
+            min-height: 200px
+            &::after
+                position: absolute
+                content: ""
+                height: 200px
+                width: 1px
+                background-color: #EBE8E1
+                top: 0
+                right: 0
+            &-item
+                line-height: 20px
+                margin-bottom: 15px
+            &-note
+                font-size: 14px
+                line-height: 16px
+
+    &__instruments
+        width: 90%
+        margin: 0 auto
+        box-shadow: 11px 11px 19px 5px rgba(34, 60, 80, 0.2)
+        list-style-type: none
+        padding: 50px
+        &-item
+            padding: 10px 0
+            display: grid
+            grid-template-columns: repeat(2, 1fr)
+    &__instr-title
+        align-items: center
+        display: flex
+        font-size: 18px
+    &__icon-wrapper
+        margin-right: 20px
+        width: 60px
+        height: 60px
+        border: 2px solid #EBE8E1
+        border-radius: 100%
+        display: flex
+        justify-content: center
+        align-items: center
+    &__icon
+        width: 35px
+        height: 35px
+
+    &__knowledge
+        list-style-type: none
+        width: 85%
+        margin: 0 auto
+        padding: 50px 50px 30px 100px
+        position: relative
+        box-shadow: 11px 11px 19px 5px rgba(34, 60, 80, 0.2)
+        &::after
+            top: 20px
+            left: 42px
+            position: absolute
+            content: ""
+            height: 16px
+            width: 16px
+            border-radius: 100%
+            background-color: $main-color
+        &::before
+            top: 20px
+            left: 50px
+            position: absolute
+            content: ""
+            height: calc( 100% - 82px )
+            width: 1px
+            background-color: #bebcb7
+        &-item
+            margin-bottom: 20px
+            font-size: 18px
+            position: relative
+            font-weight: 300
+            opacity: 1
+            transition: 1s all
+            transform: translateX(0)
+            span
+                font-weight: 500
+            &.hidden
+                opacity: 0
+                transform: translateX(30%)
+                &::before
+                    width: 0
+            &::before
+                position: absolute
+                content: ""
+                height: 1px
+                width: 30px
+                background-color: #bebcb7
+                top: 50%
+                left: -50px
+                transition: width 3s
+            &::after
+                top: 50%
+                transform: translateY(-50%)
+                left: -25px
+                position: absolute
+                content: ""
+                height: 10px
+                width: 10px
+                border-radius: 100%
+                background-color: #bebcb7
