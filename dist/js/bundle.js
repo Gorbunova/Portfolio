@@ -77,7 +77,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _educationSectionAnim__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./educationSectionAnim */ "./src/js/animation/educationSectionAnim.js");
 /* harmony import */ var _leaveHomeScreenAnim__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./leaveHomeScreenAnim */ "./src/js/animation/leaveHomeScreenAnim.js");
 /* harmony import */ var _titleAnim__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./titleAnim */ "./src/js/animation/titleAnim.js");
+/* harmony import */ var _skillsSectionAnim__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./skillsSectionAnim */ "./src/js/animation/skillsSectionAnim.js");
 //Module with animations during scroll
+
 
 
 
@@ -125,6 +127,11 @@ function animate() {
 
 		//Skills Section animation
 		(0,_offsetSkillsSection__WEBPACK_IMPORTED_MODULE_0__["default"])(isOpenedSkills, '.skills__wrapper', '.skills__container', '.skills__title', skillsItemSelectors);
+
+		const screenWidth = window.screen.width;
+		if (screenWidth < 769) {
+			(0,_skillsSectionAnim__WEBPACK_IMPORTED_MODULE_4__["default"])(isOpenedSkills, skillsItemSelectors, '.skills__technologies', '.skills__instruments');
+		}
 
 		//Education Section animation
 		(0,_educationSectionAnim__WEBPACK_IMPORTED_MODULE_1__["default"])('.education__line', '.education__column-title', '.education__column', '.education__item');
@@ -322,6 +329,45 @@ function setNum(item, percent, curIndex) {
 	}
 }
 /* harmony default export */ __webpack_exports__["default"] = (setProgressNums);
+
+
+/***/ }),
+
+/***/ "./src/js/animation/skillsSectionAnim.js":
+/*!***********************************************!*\
+  !*** ./src/js/animation/skillsSectionAnim.js ***!
+  \***********************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _animationFunctions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./animationFunctions */ "./src/js/animation/animationFunctions.js");
+/* harmony import */ var _progressBars__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./progressBars */ "./src/js/animation/progressBars.js");
+
+
+
+function skillsSectionAnim(isOpenedSkills, skillsItemSelectors, technologiesSelector, instrumentsSelector) {
+	const doc = document;
+	const { technologies, instruments, knowledge } = skillsItemSelectors;
+
+	const skillsTec = doc.querySelector(technologiesSelector);
+	const skillsInstr = doc.querySelector(instrumentsSelector);
+
+	const skillsKnolsItems = doc.querySelectorAll(knowledge);
+
+	if ((0,_animationFunctions__WEBPACK_IMPORTED_MODULE_0__.isPartiallyVisible)(skillsTec) && isOpenedSkills.tec === false) {
+		(0,_progressBars__WEBPACK_IMPORTED_MODULE_1__["default"])(technologies);
+		isOpenedSkills.tec = true;
+	} else if ((0,_animationFunctions__WEBPACK_IMPORTED_MODULE_0__.isPartiallyVisible)(skillsInstr) && isOpenedSkills.instr === false) {
+		(0,_progressBars__WEBPACK_IMPORTED_MODULE_1__["default"])(instruments);
+		isOpenedSkills.instr = true;
+	} else if ((0,_animationFunctions__WEBPACK_IMPORTED_MODULE_0__.isPartiallyVisible)(skillsKnolsItems[0]) && isOpenedSkills.knol === false) {
+		(0,_animationFunctions__WEBPACK_IMPORTED_MODULE_0__.setSteppedAnimation)(true, 0, skillsKnolsItems, false);
+		isOpenedSkills.knol = true;
+	}
+	return isOpenedSkills;
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (skillsSectionAnim);
 
 
 /***/ }),

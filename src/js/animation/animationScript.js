@@ -5,6 +5,7 @@ import offsetSkillsSection from './offsetSkillsSection';
 import educationSectionAnim from './educationSectionAnim';
 import leaveHomeScreen from './leaveHomeScreenAnim';
 import titleAnim from './titleAnim';
+import skillsSectionAnim from './skillsSectionAnim';
 
 export function animate() {
 	const doc = document;
@@ -46,6 +47,11 @@ export function animate() {
 
 		//Skills Section animation
 		offsetSkillsSection(isOpenedSkills, '.skills__wrapper', '.skills__container', '.skills__title', skillsItemSelectors);
+
+		const screenWidth = window.screen.width;
+		if (screenWidth < 769) {
+			skillsSectionAnim(isOpenedSkills, skillsItemSelectors, '.skills__technologies', '.skills__instruments');
+		}
 
 		//Education Section animation
 		educationSectionAnim('.education__line', '.education__column-title', '.education__column', '.education__item');
