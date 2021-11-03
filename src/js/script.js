@@ -1,26 +1,24 @@
 'use strict';
 
-import { animate } from './animationScript.js';
+import { animate } from './animation/animationScript.js';
+import openMenu from './openMenu.js';
+import firstScreenAnim from './animation/firstScreenAnim.js';
+import sapperSlider from './sapperSlider.js';
+import smoothLinks from './smoothLinks.js';
+import offsetPortfolioItems from './offsetPortfolioItems.js';
 
 const doc = document;
 
-const hamburger = doc.querySelector('.hamburger');
-
 doc.addEventListener('DOMContentLoaded', function () {
+	firstScreenAnim('.first-screen__top', '.first-screen__bottom', '.first-screen__name', '.first-screen__surname');
 	animate();
+	sapperSlider('.portfolio__photo-sapper', '.portfolio__checkbox');
 
-	hamburger.addEventListener('click', openMenu);
+	const screenWidth = doc.documentElement.clientWidth;
+	offsetPortfolioItems(screenWidth, '.portfolio__item');
+
+	const hamburger = doc.querySelector('.hamburger');
+	hamburger.addEventListener('click', () => openMenu(hamburger, '.content', '.sidepanel'));
+
+	smoothLinks();
 });
-
-function openMenu() {
-	const content = doc.querySelector('.content'),
-		sidePanel = doc.querySelector('.sidepanel');
-
-	if (hamburger.classList.contains('hamburger_up')) {
-		window.scrollTo(0, 0);
-	} else {
-		content.classList.toggle('content_folded');
-		sidePanel.classList.toggle('sidepanel_hidden');
-		hamburger.classList.toggle('hamburger_close');
-	}
-}
