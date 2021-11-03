@@ -1,0 +1,38 @@
+.footer
+    background-color: #d8d5cd
+    padding: 30px
+    &__list
+        list-style-type: none
+        width: 100%
+        display: flex
+        justify-content: center
+        &-item
+            padding: 0 60px
+        &-link
+            color: #000
+            &:hover
+                color: #FFA501
+        &-icon
+            height: 30px
+            margin: 0 10px
+    &__social
+        margin-top: 10px
+        text-align: center
+        &-icon
+            height: 30px
+            padding: 0 20px
+
+@media (max-width: 992px)
+    .footer
+        &__list
+            &-item
+                padding: 0 30px
+
+@media (max-width: 768px)
+    .footer
+        &__list
+            &-link
+                display: flex
+                flex-direction: column
+        &__social
+            margin-top: 10px

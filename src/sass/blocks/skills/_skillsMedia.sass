@@ -51,7 +51,7 @@
             padding: 20px
             &-item
                 grid-template: 50px 20px / 1fr
-                margin-bottom: 20px
+                margin-bottom: 5px
         &__instr-title
             font-size: 16px
         &__knowledge
@@ -115,6 +115,7 @@
 
 @media (max-width: 576px)
     .skills
+        padding: 50px 0
         &__chapters
             top: 10px
 
@@ -160,3 +161,17 @@
                 height: calc( 100% - 82px )
             &::after
                 left: 12px
+
+@media (max-height: 750px) and  (min-width: 768px)
+    .skills__item
+        padding-top: 200px
+
+@media (max-height: 700px)
+    .skills
+        &__knowledge
+            &-item
+                margin-bottom: 10px
+            &::before
+                height: calc( 100% - 87px )
+        &__tec-list-item
+            margin-bottom: 8px

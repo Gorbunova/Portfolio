@@ -1,3 +1,4 @@
+//Module with base animation functions
 'use strict';
 
 export function isFullyVisible(item) {
