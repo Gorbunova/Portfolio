@@ -11,7 +11,7 @@ The website contains information:
 - CSS (most of the animations on the site are implemented using CSS)
 - JavaScript (all interactivity on the site is implemented using native JS)
 - Gulp (task scheduler used to minify files and images, and also for assembling CSS files)
-- ES6 modules (used to build JS files)
+- Webpack (ES6 Modules, Babel)
 - Structural ideas from the BEM methodology are partially used
 
 ## Quick start
